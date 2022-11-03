@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Button Ripple Effect</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Roboto;
+        color: #ffff;
+    }
+
+    body{
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+
+    .btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:20px ;
+    }
+
+    .btns .btn{
+        position: relative;
+        width: 150px;
+        height: 50px;
+        background:transparent ;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 1.2em;
+        outline: none;
+        border: none;
+        box-shadow:inset 2px 2px 2px 0 rgba(225,225,225,.5);
+        cursor: pointer;
+        transition: all .3 ease;
+    }
+
+    .btns .btn.btn1{
+        background: rgba(6 14 131);
+        background: linear-gradient(0deg,rgba(6 14 131,1)0%
+        rgba(12 126 251 1)100%);
+    }
+
+    .btns .btn.btn1:hover{
+        background: rgba(0 3 225);
+        background: linear-gradient(0deg,rgba(6 14 131,1)0%
+        rgba(12 126 251 1)100%);
+    }
+
+    .btns .btn.btn2{
+        background: rgba(6 14 131);
+        background: linear-gradient(0deg,rgba(6 14 131,1)0%
+        rgba(12 126 251 1)100%);
+    }
+
+    .btns .btn.btn2:hover{
+        background: rgba(96 9 248);
+        background: linear-gradient(0deg,rgba(6 14 131,1)0%
+        rgba(12 126 251 1)100%);
+    }
+
+    .btns .btn.btn2::before{
+        width: 2px;
+        height: 0%;
+    }
+
+</style>
+<body>
+    <div class="btns">
+        <button class="btn btn1">first button</button>
+        <button class="btn btn2">second button</button>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('button')
+        buttons.forEach((button)=>{
+            button.onclick = function(e){
+                let x =  e.clientX = e.targer.offsetLeft;
+                let y =  e.clientX = e.targer.offsetTop;
+                let ripple = document.createElement('span');
+            }
+        })
+    </script>
+</body>
+</html>
